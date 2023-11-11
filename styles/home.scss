@@ -189,6 +189,8 @@ header {
       .title {
         font-size: 110px;
         font-style: italic;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
         line-height: 0.75;
         display: flex;
         flex-direction: column;
@@ -205,6 +207,7 @@ header {
         width: 560px;
         font-size: 22px;
         font-family: "Noto Serif TC", serif;
+        line-height: 115%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -297,6 +300,8 @@ header {
     color: #202020;
     h1 {
       font-size: 95px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
     }
     h2 {
       font-size: 32px;
@@ -360,9 +365,24 @@ header {
         .title {
           all: unset;
           height: 50px;
-          font-size: 36px;
-          font-weight: 500;
-          font-family: "Noto Sans TC", sans-serif;
+          position: relative;
+          overflow: hidden;
+          &:hover h1 {
+            transform: translateY(-50px);
+          }
+          h1 {
+            font-size: 36px;
+            font-weight: 500;
+            font-family: "Noto Sans TC", sans-serif;
+            transition: transform 0.5s ease;
+            &::after {
+              display: block;
+              margin-top: 1.25rem;
+              font-size: 30px;
+              font-weight: 500;
+              font-family: "Noto Sans TC", sans-serif;
+            }
+          }
         }
         .describe {
           height: 140px;
@@ -373,6 +393,212 @@ header {
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+        &:nth-child(1) {
+          .title {
+            h1 {
+              &::after {
+                content: "設計";
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          .title {
+            h1 {
+              &::after {
+                content: "渲染";
+              }
+            }
+          }
+        }
+        &:nth-child(3) {
+          .title {
+            h1 {
+              &::after {
+                content: "裝修";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .more-btn {
+    padding-bottom: 1rem;
+    a {
+      width: 150px;
+      height: 30px;
+      margin: 0 auto;
+      background-color: #000;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover div {
+        transform: translateX(-150px);
+      }
+      div {
+        position: relative;
+        pointer-events: none;
+        transition: transform 0.5s ease;
+        &::after {
+          content: "MORE";
+          color: #fff;
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          width: 150px;
+          height: 30px;
+          position: absolute;
+          top: 0;
+          left: 150px;
+        }
+      }
+    }
+  }
+}
+
+.portfolio {
+  background-color: #fff;
+  .title {
+    text-align: center;
+    h1 {
+      font-size: 90px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+    }
+    h2 {
+      font-size: 32px;
+      font-family: "Noto Serif SC", sans-serif;
+    }
+  }
+  .portfolio-wrapper {
+    width: 1440px;
+    height: 600px;
+    margin: 3rem auto;
+    display: flex;
+    gap: 30px;
+    .card-box {
+      flex: 1 0 0px;
+      a {
+        text-decoration: none;
+      }
+      .card {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        transition: border-radius 0.3s ease;
+        overflow: hidden;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: #00000060;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: opacity 0.5s ease, border-radius 0.3s ease;
+          pointer-events: none;
+        }
+        &:hover::after {
+          opacity: 1;
+          border-radius: 20px;
+        }
+        &:hover {
+          border-radius: 20px;
+        }
+        &:hover .bookmark {
+          top: 50%;
+        }
+        .bookmark {
+          width: 154px;
+          height: 500px;
+          border-radius: 10px;
+          background-color: #fff;
+          position: absolute;
+          top: -50%;
+          left: 50%;
+          z-index: 1;
+          transform: translate(-50%, -50%);
+          transition: top 0.4s ease;
+          .fill {
+            width: 100%;
+            height: 30px;
+          }
+          .content {
+            width: 100%;
+            height: calc(100% - 64px);
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #222;
+            text-align: center;
+            img {
+              width: 154px;
+              height: 340px;
+              padding: 20px;
+              object-fit: cover;
+            }
+            h3 {
+              font-size: 21px;
+              font-family: "Noto Serif SC", sans-serif;
+              color: rgb(32, 32, 32);
+              margin-bottom: 2.5rem;
+            }
+            .btn {
+              width: fit-content;
+              margin: 0 auto;
+              padding: 8px;
+              border-radius: 5px;
+              font-size: 12px;
+              font-family: "Noto Serif SC", sans-serif;
+              line-height: 4px;
+              color: #fff;
+              background-color: #222;
+            }
+          }
+        }
+      }
+    }
+  }
+  .more-btn {
+    padding-bottom: 1rem;
+    a {
+      width: 150px;
+      height: 30px;
+      margin: 0 auto;
+      background-color: #000;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover div {
+        transform: translateX(-150px);
+      }
+      div {
+        position: relative;
+        pointer-events: none;
+        transition: transform 0.5s ease;
+        &::after {
+          content: "MORE";
+          color: #fff;
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          width: 150px;
+          height: 30px;
+          position: absolute;
+          top: 0;
+          left: 150px;
         }
       }
     }
