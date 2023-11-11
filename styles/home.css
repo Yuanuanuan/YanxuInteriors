@@ -8,6 +8,7 @@
 body {
   overflow-x: hidden;
   position: relative;
+  cursor: default;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -20,6 +21,15 @@ body .cover-image {
   width: 100vw;
   height: 100vh;
   z-index: -999;
+}
+body .cover-door {
+  background: top/cover no-repeat url("../images/home/door-cover.webp");
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 body .cover-text {
   position: absolute;

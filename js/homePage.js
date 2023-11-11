@@ -1,16 +1,4 @@
-const coverText = document.querySelector(".cover-text");
-const coverTextH1 = coverText.querySelector("h1");
-
-const coverTextAnimation = gsap.timeline();
-coverTextAnimation
-  .to(coverText, {
-    y: -200,
-    duration: 0.5,
-    opacity: 1,
-    delay: 0.5,
-  })
-  .to(coverTextH1, { opacity: 1, duration: 0.3 });
-
+// Function document
 const coverDoor = document.querySelector(".cover-door");
 const coverImage = document.querySelector(".cover-image");
 
@@ -29,4 +17,24 @@ const handleScroll = () => {
   }
 };
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener("scroll", handleScroll);
+
+// Animation
+const coverText = document.querySelector(".cover-text");
+const coverTextH1 = coverText.querySelector("h1");
+
+const coverTextAnimation = gsap.timeline();
+coverTextAnimation
+  .to(coverText, {
+    y: -200,
+    duration: 0.5,
+    opacity: 1,
+    delay: 0.5,
+  })
+  .to(coverTextH1, { opacity: 1, duration: 0.3 });
+
+const aboutUsAnimation = gsap.timeline({ paused: true });
+aboutUsAnimation.to();
+
+const serviceAnimation = gsap.timeline({ paused: true });
+serviceAnimation.to();

@@ -7,6 +7,7 @@
 body {
   overflow-x: hidden;
   position: relative;
+  cursor: default;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -19,15 +20,15 @@ body {
     height: 100vh;
     z-index: -999;
   }
-  // .cover-door {
-  //   background: top/cover no-repeat url("../images/home/door-cover.webp");
-  //   width: 100vw;
-  //   min-height: 100vh;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   pointer-events: none;
-  // }
+  .cover-door {
+    background: top/cover no-repeat url("../images/home/door-cover.webp");
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
   .cover-text {
     position: absolute;
     top: 50vh;
