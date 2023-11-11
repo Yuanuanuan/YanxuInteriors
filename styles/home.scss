@@ -20,15 +20,15 @@ body {
     height: 100vh;
     z-index: -999;
   }
-  .cover-door {
-    background: top/cover no-repeat url("../images/home/door-cover.webp");
-    width: 100vw;
-    min-height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
+  // .cover-door {
+  //   background: top/cover no-repeat url("../images/home/door-cover.webp");
+  //   width: 100vw;
+  //   min-height: 100vh;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   pointer-events: none;
+  // }
   .cover-text {
     position: absolute;
     top: 50vh;
@@ -267,7 +267,7 @@ header {
 
 .interval {
   width: 100vw;
-  height: 210px;
+  height: 120px;
   background-color: #fff;
 }
 
@@ -601,6 +601,72 @@ header {
           top: 0;
           left: 150px;
         }
+      }
+    }
+  }
+}
+
+.column {
+  width: 100vw;
+  height: 950px;
+  background-color: #fff;
+  .title {
+    text-align: center;
+    h1 {
+      font-size: 90px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+    }
+    h2 {
+      width: fit-content;
+      margin: 0 auto;
+      font-size: 32px;
+      font-family: "Noto Serif SC", sans-serif;
+      position: relative;
+      padding: 0 12px;
+      &::before {
+        content: "";
+        width: 550px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        background-color: #000;
+        pointer-events: none;
+      }
+      &::after {
+        content: "";
+        width: 550px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        background-color: #000;
+        pointer-events: none;
+      }
+    }
+  }
+  .column-wrapper {
+    width: 1320px;
+    height: 660px;
+    padding: 30px;
+    margin: 1rem auto;
+    display: flex;
+    gap: 30px;
+    border: 1px solid red;
+    .card-box {
+      flex: 1 0 0px;
+      a {
+        text-decoration: none;
+      }
+      .card {
+        width: 400px;
+        height: 600px;
+        border: 2px solid #222;
+        border-radius: 200px 200px 0 0;
+        padding: 15px;
       }
     }
   }
