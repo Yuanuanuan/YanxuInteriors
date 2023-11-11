@@ -5,29 +5,26 @@
 }
 
 body {
-  background: center/cover no-repeat url("../images/home-cover.webp");
-  background-attachment: fixed;
-  width: 100cw;
-  height: 100vh;
   overflow-x: hidden;
   position: relative;
 }
 body::-webkit-scrollbar {
   display: none;
 }
-body .cover-door {
-  background: top/cover no-repeat url("../images/door-cover.webp");
-  width: 100vw;
-  min-height: 100vh;
+body .cover-image {
+  background: center/cover no-repeat url("../images/home/home-cover.webp");
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
 }
 body .cover-text {
   position: absolute;
-  top: 50%;
+  top: 50vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   color: #454545;
   line-height: 1.5;
   opacity: 0;
@@ -44,7 +41,7 @@ body .cover-text h2 {
 }
 body .empty-box {
   width: 100vw;
-  height: 200vh;
+  height: 150vh;
 }
 
 header nav {
@@ -52,6 +49,7 @@ header nav {
   height: auto;
   padding: 0 32px 8px;
   position: fixed;
+  z-index: 9999;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -152,4 +150,208 @@ header nav ul li:last-child a img {
 header nav ul li:last-child a:hover {
   background-color: rgb(227, 114, 43);
   border: 1px solid rgb(227, 114, 43);
+}
+
+.about-us .about-us-wrapper {
+  width: 100vw;
+  height: 900px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.about-us .about-us-wrapper .first-part {
+  padding-top: 210px;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.about-us .about-us-wrapper .first-part .title {
+  font-size: 110px;
+  font-style: italic;
+  line-height: 0.75;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.about-us .about-us-wrapper .first-part .title div span {
+  font-size: 60px;
+  font-weight: 600;
+  font-style: normal;
+}
+.about-us .about-us-wrapper .first-part .describe {
+  width: 560px;
+  font-size: 22px;
+  font-family: "Noto Serif TC", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  letter-spacing: 6px;
+}
+.about-us .about-us-wrapper .first-part .more-btn a {
+  width: 150px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+.about-us .about-us-wrapper .first-part .more-btn a:hover div {
+  transform: translateX(-150px);
+}
+.about-us .about-us-wrapper .first-part .more-btn a div {
+  position: relative;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+.about-us .about-us-wrapper .first-part .more-btn a div::after {
+  content: "MORE";
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 150px;
+}
+.about-us .about-us-wrapper .second-part {
+  width: 75%;
+  height: 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 105px;
+  font-family: "Abhaya Libre", serif;
+}
+
+.interval {
+  width: 100vw;
+  height: 210px;
+  background-color: #fff;
+}
+
+.service {
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.service .bg-circle {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service .bg-circle .circle {
+  width: 600px;
+  height: 600px;
+  background-color: #fe924e;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+.service .title {
+  width: 100vw;
+  height: 130px;
+  font-weight: 400;
+  text-align: center;
+  color: #202020;
+}
+.service .title h1 {
+  font-size: 95px;
+}
+.service .title h2 {
+  font-size: 32px;
+  font-family: "Noto Serif SC", sans-serif;
+}
+.service .content {
+  width: 100vw;
+  height: 920px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.service .content .left {
+  height: 100%;
+  flex: 1 0 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service .content .left img {
+  width: 250px;
+  height: 250px;
+}
+.service .content .right {
+  height: 100%;
+  flex: 1 0 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.service .content .right img {
+  width: 250px;
+  height: 250px;
+}
+.service .content .middle {
+  flex: 2 0 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.service .content .middle .item {
+  text-align: center;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.service .content .middle .item .num {
+  width: 60px;
+  height: 60px;
+  font-size: 45px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service .content .middle .item .title {
+  all: unset;
+  height: 50px;
+  font-size: 36px;
+  font-weight: 500;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.service .content .middle .item .describe {
+  height: 140px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  line-height: 115%;
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=home.css.map */

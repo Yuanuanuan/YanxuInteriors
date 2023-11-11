@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon.webp" />
     <title>YanXu Interiors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <title>延序室內設計 || 空間美學 | 室內裝修 | 專業規劃</title> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Andada+Pro&family=Noto+Serif+SC&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Andada+Pro&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+SC&family=Poppins&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+    <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/home.css" />
   </head>
   <body>
     <div class="empty-box"></div>
+    <div class="cover-image"></div>
     <div class="cover-door"></div>
     <div class="cover-text">
       <h1>
@@ -30,7 +32,9 @@
       <nav>
         <div class="header">
           <div class="logo">
-            <img src="./images/logo.png" alt="" />
+            <a href="/index.html">
+              <img src="./images/logo.png" alt="" />
+            </a>
           </div>
           <div class="social-media">
             <a
@@ -73,6 +77,84 @@
         </ul>
       </nav>
     </header>
+
+    <section class="about-us">
+      <div class="about-us-wrapper">
+        <div class="first-part">
+          <div class="title">
+            <div>ABOUT</div>
+            <div><span>關於延序</span>US</div>
+          </div>
+          <div class="describe">
+            <div>延續是一種執念、一種思維、一種設計。</div>
+            <div>
+              我們主張設計的本身就是對事物的延伸，<br />
+              但也同樣不可或缺，<br />
+              以功能與美感兼具的設計來完善空間的規劃。
+            </div>
+          </div>
+          <div class="more-btn">
+            <a href="">
+              <div>MORE</div>
+            </a>
+          </div>
+        </div>
+        <div class="second-part">
+          <div>)(</div>
+          <div>)(</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="interval"></div>
+
+    <section class="service">
+      <div class="bg-circle">
+        <div class="circle"></div>
+      </div>
+      <div class="title">
+        <h1>SERVICE</h1>
+        <h2>服務項目</h2>
+      </div>
+      <div class="content">
+        <div class="left">
+          <img src="./images/home/service.webp" alt="" />
+        </div>
+        <div class="middle">
+          <div class="item">
+            <div class="num">1</div>
+            <div class="title">Design</div>
+            <div class="describe">
+              從精密的現場丈量<br />
+              發展成專屬且獨特的設計成品<br /><br />
+              附有完整的設計流程與雙方的合約保障
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">2</div>
+            <div class="title">Render</div>
+            <div class="describe">
+              用高擬真度的3D渲染圖<br />
+              實現客戶對設計的直觀想像<br /><br />
+              不必再擔心設計圖看不懂
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">3</div>
+            <div class="title">Renovation</div>
+            <div class="describe">
+              優良的工程品質<br />
+              是對設計的最後一項責任<br /><br />
+              附有完整的驗收作業及售後一年保固
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="./images/home/service.webp" alt="" />
+        </div>
+      </div>
+      <div class="more-btn"></div>
+    </section>
 
     <script src="./js/homePage.js"></script>
   </body>
