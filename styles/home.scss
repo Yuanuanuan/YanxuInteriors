@@ -4,6 +4,44 @@
   box-sizing: border-box;
 }
 
+.more-btn {
+  padding-bottom: 1rem;
+  a {
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    background-color: #000;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover div {
+      transform: translateX(-150px);
+    }
+    div {
+      position: relative;
+      pointer-events: none;
+      transition: transform 0.5s ease;
+      &::after {
+        content: "MORE";
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        left: 150px;
+      }
+    }
+  }
+}
+
 body {
   overflow-x: hidden;
   position: relative;
@@ -153,9 +191,9 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            img {
-              width: 16px;
-              height: 16px;
+            svg {
+              width: 20px;
+              height: 20px;
               margin: 0 0 0 6px;
             }
             &:hover {
@@ -215,42 +253,6 @@ header {
         align-items: flex-start;
         gap: 15px;
         letter-spacing: 6px;
-      }
-      .more-btn {
-        // overflow-x: hidden;
-        a {
-          width: 150px;
-          height: 30px;
-          background-color: #000;
-          border-radius: 30px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          color: #fff;
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-          text-decoration: none;
-          &:hover div {
-            transform: translateX(-150px);
-          }
-          div {
-            position: relative;
-            pointer-events: none;
-            transition: transform 0.5s ease;
-            &::after {
-              content: "MORE";
-              color: #fff;
-              font-family: "Poppins", sans-serif;
-              font-weight: 500;
-              width: 150px;
-              height: 30px;
-              position: absolute;
-              top: 0;
-              left: 150px;
-            }
-          }
-        }
       }
     }
     .second-part {
@@ -425,43 +427,6 @@ header {
       }
     }
   }
-  .more-btn {
-    padding-bottom: 1rem;
-    a {
-      width: 150px;
-      height: 30px;
-      margin: 0 auto;
-      background-color: #000;
-      border-radius: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      color: #fff;
-      font-family: "Poppins", sans-serif;
-      font-weight: 500;
-      text-decoration: none;
-      &:hover div {
-        transform: translateX(-150px);
-      }
-      div {
-        position: relative;
-        pointer-events: none;
-        transition: transform 0.5s ease;
-        &::after {
-          content: "MORE";
-          color: #fff;
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-          width: 150px;
-          height: 30px;
-          position: absolute;
-          top: 0;
-          left: 150px;
-        }
-      }
-    }
-  }
 }
 
 .portfolio {
@@ -608,7 +573,7 @@ header {
 
 .column {
   width: 100vw;
-  height: 950px;
+  height: 900px;
   background-color: #fff;
   .title {
     text-align: center;
@@ -655,7 +620,6 @@ header {
     margin: 1rem auto;
     display: flex;
     gap: 30px;
-    border: 1px solid red;
     .card-box {
       flex: 1 0 0px;
       a {
@@ -666,8 +630,73 @@ header {
         height: 600px;
         border: 2px solid #222;
         border-radius: 200px 200px 0 0;
-        padding: 15px;
+        padding: 25px 15px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          width: 350px;
+          height: 350px;
+          margin-bottom: 1rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        .title {
+          width: 100%;
+          margin-bottom: 1rem;
+          color: #222;
+          font-size: 28px;
+          font-weight: 600;
+          font-family: "Noto Sans TC", sans-serif;
+          text-align: start;
+        }
+        .detail {
+          width: 100%;
+          font-size: 16px;
+          font-family: "Noto Sans TC", sans-serif;
+          color: #999;
+          margin-bottom: 1rem;
+          display: flex;
+          justify-content: space-between;
+        }
+        .describe {
+          color: #999;
+          font-family: "Andada Pro", sans-serif;
+          line-height: 1.2em;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+        }
+        .learn-btn {
+          width: 100%;
+          height: 20px;
+          margin-top: .5rem;
+          background-color: #222;
+          color: #999;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .text {
+            font-size: 12px;
+            font-weight: 600;
+            font-family: "Noto Sans TC", sans-serif;
+            letter-spacing: 0.3;
+          }
+        }
       }
     }
   }
+}
+
+.contact {
+  width: 100vw;
+  height: 900px;
+  background-color: #000;
+}
+
+footer {
+  width: 100vw;
+  height: 350px;
+  background-color: #000;
 }

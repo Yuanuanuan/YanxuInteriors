@@ -16,9 +16,51 @@ const handleScroll = () => {
   }
 };
 
+const handleChangeHeader = () => {
+  const header = document.querySelector("header nav");
+  const footer = document.querySelector("footer");
+  const scrollPosition = window.scrollY;
+  const items = header.querySelectorAll("ul li a");
+
+  const footerHeight = footer.offsetHeight;
+
+  const diff =
+    document.body.offsetHeight - (scrollPosition + window.innerHeight);
+
+  if (diff < footerHeight) {
+    header.style.backgroundColor = "#000";
+    items.forEach((item, index) => {
+      item.style.border = "1px solid #fff";
+      item.style.color = "#fff";
+
+      if (index === items.length - 1) {
+        item.style.backgroundColor = "#fff";
+        item.style.color = "#e68446";
+        item.querySelector('svg path').style.stroke = '#e68446'
+      }
+    });
+  } else {
+    header.style.backgroundColor = "rgba(245, 245, 245, 0.16)";
+    items.forEach((item, index) => {
+      item.style.border = "1px solid #222";
+      item.style.color = "#222";
+
+      if (index === items.length - 1) {
+        item.style.backgroundColor = "#222";
+        item.style.color = "#fff";
+        item.querySelector('svg path').style.stroke = '#fff'
+      }
+    });
+  }
+};
+
+window.addEventListener("scroll", handleChangeHeader);
+
 window.addEventListener("scroll", handleScroll);
 
-// Animation
+// --------------  Animation  ----------------
+
+// Cover Animation
 const coverText = document.querySelector(".cover-text");
 const coverTextH1 = coverText.querySelector("h1");
 
@@ -32,6 +74,7 @@ coverTextAnimation
   })
   .to(coverTextH1, { opacity: 1, duration: 0.3 });
 
+// About Us Animation
 const aboutUsTitle = document.querySelector(
   ".about-us-wrapper .first-part .title"
 );
@@ -63,6 +106,7 @@ gsap.to(aboutUsAnimation, {
   },
 });
 
+// Service Animation
 const serviceItems = document.querySelectorAll(
   "section.service .content .middle .item"
 );
@@ -73,7 +117,7 @@ serviceAnimation.from(serviceItems, {
   y: 60,
   opacity: 0,
   ease: "power4.out",
-  stagger: .5,
+  stagger: 0.5,
 });
 
 gsap.to(serviceAnimation, {

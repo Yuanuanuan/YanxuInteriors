@@ -5,6 +5,44 @@
   box-sizing: border-box;
 }
 
+.more-btn {
+  padding-bottom: 1rem;
+}
+.more-btn a {
+  width: 150px;
+  height: 30px;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+.more-btn a:hover div {
+  transform: translateX(-150px);
+}
+.more-btn a div {
+  position: relative;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+.more-btn a div::after {
+  content: "MORE";
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 150px;
+}
+
 body {
   overflow-x: hidden;
   position: relative;
@@ -144,9 +182,9 @@ header nav ul li:last-child a {
   justify-content: center;
   align-items: center;
 }
-header nav ul li:last-child a img {
-  width: 16px;
-  height: 16px;
+header nav ul li:last-child a svg {
+  width: 20px;
+  height: 20px;
   margin: 0 0 0 6px;
 }
 header nav ul li:last-child a:hover {
@@ -199,39 +237,6 @@ header nav ul li:last-child a:hover {
   align-items: flex-start;
   gap: 15px;
   letter-spacing: 6px;
-}
-.about-us .about-us-wrapper .first-part .more-btn a {
-  width: 150px;
-  height: 30px;
-  background-color: #000;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  text-decoration: none;
-}
-.about-us .about-us-wrapper .first-part .more-btn a:hover div {
-  transform: translateX(-150px);
-}
-.about-us .about-us-wrapper .first-part .more-btn a div {
-  position: relative;
-  pointer-events: none;
-  transition: transform 0.5s ease;
-}
-.about-us .about-us-wrapper .first-part .more-btn a div::after {
-  content: "MORE";
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  width: 150px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  left: 150px;
 }
 .about-us .about-us-wrapper .second-part {
   width: 75%;
@@ -386,43 +391,6 @@ header nav ul li:last-child a:hover {
 .service .content .middle .item:nth-child(3) .title h1::after {
   content: "裝修";
 }
-.service .more-btn {
-  padding-bottom: 1rem;
-}
-.service .more-btn a {
-  width: 150px;
-  height: 30px;
-  margin: 0 auto;
-  background-color: #000;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  text-decoration: none;
-}
-.service .more-btn a:hover div {
-  transform: translateX(-150px);
-}
-.service .more-btn a div {
-  position: relative;
-  pointer-events: none;
-  transition: transform 0.5s ease;
-}
-.service .more-btn a div::after {
-  content: "MORE";
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  width: 150px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  left: 150px;
-}
 
 .portfolio {
   background-color: #fff;
@@ -570,7 +538,7 @@ header nav ul li:last-child a:hover {
 
 .column {
   width: 100vw;
-  height: 950px;
+  height: 900px;
   background-color: #fff;
 }
 .column .title {
@@ -619,7 +587,6 @@ header nav ul li:last-child a:hover {
   margin: 1rem auto;
   display: flex;
   gap: 30px;
-  border: 1px solid red;
 }
 .column .column-wrapper .card-box {
   flex: 1 0 0px;
@@ -632,5 +599,71 @@ header nav ul li:last-child a:hover {
   height: 600px;
   border: 2px solid #222;
   border-radius: 200px 200px 0 0;
-  padding: 15px;
+  padding: 25px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.column .column-wrapper .card-box .card img {
+  width: 350px;
+  height: 350px;
+  margin-bottom: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.column .column-wrapper .card-box .card .title {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #222;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Noto Sans TC", sans-serif;
+  text-align: start;
+}
+.column .column-wrapper .card-box .card .detail {
+  width: 100%;
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  color: #999;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.column .column-wrapper .card-box .card .describe {
+  color: #999;
+  font-family: "Andada Pro", sans-serif;
+  line-height: 1.2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+}
+.column .column-wrapper .card-box .card .learn-btn {
+  width: 100%;
+  height: 20px;
+  margin-top: 0.5rem;
+  background-color: #222;
+  color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column .column-wrapper .card-box .card .learn-btn .text {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 0.3;
+}
+
+.contact {
+  width: 100vw;
+  height: 900px;
+  background-color: #000;
+}
+
+footer {
+  width: 100vw;
+  height: 350px;
+  background-color: #000;
 }/*# sourceMappingURL=home.css.map */
