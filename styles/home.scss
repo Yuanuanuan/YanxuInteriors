@@ -671,7 +671,7 @@ header {
         .learn-btn {
           width: 100%;
           height: 20px;
-          margin-top: .5rem;
+          margin-top: 0.5rem;
           background-color: #222;
           color: #999;
           display: flex;
@@ -698,5 +698,110 @@ header {
 footer {
   width: 100vw;
   height: 350px;
+  padding: 20px 40px;
   background-color: #000;
+  font-family: "Inter", sans-serif;
+  .content {
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .left {
+      height: 100%;
+      flex: 1 0 0px;
+      color: #fff;
+      padding-left: 20px;
+      .left-box {
+        .name {
+          font-weight: 700;
+          font-size: 46px;
+          line-height: 125%;
+        }
+        .info {
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+          div {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            img {
+              width: 24px;
+              height: 24px;
+              margin-right: 0.5rem;
+            }
+            h2 {
+              font-weight: 600;
+              a {
+                color: #fff;
+                text-decoration: none;
+              }
+            }
+            &:nth-child(1):hover {
+              h2 {
+                a {
+                  text-decoration: underline;
+                  color: #fe924e;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .middle {
+      flex: 1 0 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      .middle-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h4 {
+          color: #fff;
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+        div {
+          a {
+            margin: 0 2px;
+          }
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+    .right {
+      height: 100%;
+      flex: 1 0 0px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: start;
+      a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 2.5rem;
+        &:hover {
+          text-decoration: underline;
+          color: #fe924e;
+        }
+      }
+    }
+  }
+  .copy-right {
+    padding-top: 20px;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #333;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
