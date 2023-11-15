@@ -21,6 +21,9 @@ const handleChangeHeader = () => {
   const footer = document.querySelector("footer");
   const scrollPosition = window.scrollY;
   const items = header.querySelectorAll("ul li a");
+  const icon = header.querySelectorAll(".header-icon path");
+  const logoLine = header.querySelector(".line");
+  const logoCircle = header.querySelector(".circle");
 
   const footerHeight = footer.offsetHeight;
 
@@ -29,18 +32,23 @@ const handleChangeHeader = () => {
 
   if (diff < footerHeight) {
     header.style.backgroundColor = "#000";
+    logoLine.style.backgroundColor = "#fff";
+    logoCircle.style.backgroundColor = "#fff";
+    icon.forEach((i) => (i.style.fill = "#fff"));
     items.forEach((item, index) => {
       item.style.border = "1px solid #fff";
       item.style.color = "#fff";
-
       if (index === items.length - 1) {
         item.style.backgroundColor = "#fff";
         item.style.color = "#e68446";
-        item.querySelector('svg path').style.stroke = '#e68446'
+        item.querySelector("svg path").style.stroke = "#e68446";
       }
     });
   } else {
     header.style.backgroundColor = "rgba(245, 245, 245, 0.16)";
+    logoLine.style.backgroundColor = "#000";
+    logoCircle.style.backgroundColor = "#000";
+    icon.forEach((i) => (i.style.fill = "#000"));
     items.forEach((item, index) => {
       item.style.border = "1px solid #222";
       item.style.color = "#222";
@@ -48,7 +56,7 @@ const handleChangeHeader = () => {
       if (index === items.length - 1) {
         item.style.backgroundColor = "#222";
         item.style.color = "#fff";
-        item.querySelector('svg path').style.stroke = '#fff'
+        item.querySelector("svg path").style.stroke = "#fff";
       }
     });
   }

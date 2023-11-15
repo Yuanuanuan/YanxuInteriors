@@ -107,8 +107,33 @@ header nav .header {
   justify-content: space-between;
   align-items: center;
 }
-header nav .header .logo img {
-  width: 56px;
+header nav .header .logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav .header .logo .logo-box {
+  width: 50px;
+  height: 36px;
+  position: relative;
+}
+header nav .header .logo .logo-box .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
+header nav .header .logo .logo-box .circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #000;
 }
 header nav .header .social-media {
   display: flex;
@@ -129,12 +154,7 @@ header nav .header .social-media a div {
   justify-content: center;
   align-items: center;
 }
-header nav .header .social-media a div .fb-icon {
-  width: 22px;
-  height: 22px;
-  pointer-events: none;
-}
-header nav .header .social-media a div .ig-icon {
+header nav .header .social-media a div svg {
   width: 20px;
   height: 20px;
   pointer-events: none;
@@ -660,6 +680,165 @@ header nav ul li:last-child a:hover {
   width: 100vw;
   height: 900px;
   background-color: #000;
+}
+.contact .contact-wrapper {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact-wrapper .left {
+  flex: 1 0 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact-wrapper .left .top {
+  color: rgb(227, 114, 43);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 90px;
+  font-style: italic;
+  letter-spacing: -5px;
+  margin-right: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-bottom: 8rem;
+}
+.contact .contact-wrapper .left .top span {
+  font-size: 55px;
+  font-style: normal;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.contact .contact-wrapper .left .bottom p {
+  color: #fff;
+  font-size: 21px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  line-height: 125%;
+}
+.contact .contact-wrapper .left .bottom p a {
+  color: rgb(227, 114, 43);
+  transition: color 0.3s ease;
+}
+.contact .contact-wrapper .left .bottom p a:hover {
+  color: rgb(82, 82, 224);
+}
+.contact .contact-wrapper .right {
+  width: 600px;
+  height: 700px;
+  margin-right: 50px;
+  padding: 1rem;
+}
+.contact .contact-wrapper .right .title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: "Noto Sans TC", sans-serif;
+  margin-bottom: 2rem;
+}
+.contact .contact-wrapper .right p {
+  font-size: 18px;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 115%;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.contact .contact-wrapper .right form {
+  width: 100%;
+  height: 450px;
+  margin-top: 3rem;
+  padding: 2rem 4rem;
+  background-color: #202020;
+  border-radius: 0 60px 100px 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.contact .contact-wrapper .right form .square {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-color: #fe924e;
+}
+.contact .contact-wrapper .right form .input-box {
+  width: 400px;
+  height: 60px;
+  margin: 1.25rem 0;
+  position: relative;
+}
+.contact .contact-wrapper .right form .input-box label {
+  color: #fff;
+  background-color: #202020;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  margin-right: 1rem;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.contact .contact-wrapper .right form .input-box input {
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+  font-size: 20px;
+  color: #fff;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.contact .contact-wrapper .right form .input-box input:focus ~ label {
+  transform: translateY(-170%);
+}
+.contact .contact-wrapper .right form .input-box input:valid ~ label {
+  transform: translateY(-170%);
+}
+.contact .contact-wrapper .right form button {
+  width: 400px;
+  height: 50px;
+  margin-top: 2rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.contact .contact-wrapper .right form button::after {
+  content: "";
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+}
+.contact .contact-wrapper .right form button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.contact .contact-wrapper .right form button:hover div {
+  color: #000;
+}
+.contact .contact-wrapper .right form button div {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 
 footer {
